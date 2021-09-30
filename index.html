@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudoku</title>
+</head>
+<body>
+
+<pre id="stdout" style="font-size: 12pt;">
+
+</pre>
+
+<script src="https://cdn.jsdelivr.net/npm/@assemblyscript/loader/umd/index.js"></script>
+
+<script>
+//import loader from "@assemblyscript/loader"; // or require
+
+const stdout = document.getElementById("stdout")
+const print = msg => stdout.innerText += msg + '\n\n'
+
+loader.instantiate(
+    // Binary to instantiate
+    fetch("build/untouched.wasm"), // or fs.readFileSync
+    // or fs.promises.readFile
+    // or just a buffer
+    // Additional imports
+    // { ... }
+).then(({ exports }) => {
+    const sudoku = new exports.Sudoku()
+    print(`Sudoku.toString()\n${exports.__getString(sudoku.toString())}`)
+    print(`Sudoku.valid() ${sudoku.valid()}`)
+    print(`Sudoku.firstEmptyCellIndex() ${sudoku.firstEmptyCellIndex()}`)
+    print(`Sudoku.solve() ${sudoku.solve()}`)
+    print(`Sudoku.toString()\n${exports.__getString(sudoku.toString())}`)
+}).catch(err => {
+    print(err)
+})
+</script>
+
+</body>
+</html>
