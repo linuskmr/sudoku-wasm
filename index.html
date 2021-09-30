@@ -21,7 +21,7 @@ const print = msg => stdout.innerText += msg + '\n\n'
 
 loader.instantiate(
     // Binary to instantiate
-    fetch("build/untouched.wasm"), // or fs.readFileSync
+    fetch("build/optimized.wasm"), // or fs.readFileSync
     // or fs.promises.readFile
     // or just a buffer
     // Additional imports
