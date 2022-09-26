@@ -59,7 +59,7 @@ function solveSudoku() {
 
     // Show result statistics
     document.getElementById("result").innerText = `Success: ${sudokuResult.success}\n`
-        + `Tried Permutations: ${new Intl.NumberFormat().format(sudokuResult.tries)}\n`
+        + `Tried Permutations: ${sudokuResult.tries}\n`
         + `Time: ${endTime - startTime}ms`
     
 
