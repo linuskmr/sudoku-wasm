@@ -1,5 +1,6 @@
 import * as wasm from "./build/release.js";
 
+
 /**
  * Extracts the 2D array of numbers of the Sudoku field from the HTML table.
  */
@@ -8,10 +9,11 @@ function getField() {
     for (let y = 0; y < 9; y++) {
         const row = [];
         for (let x = 0; x < 9; x++) {
-            // Since we only have td elements in the table, we can get the n-th td element
+            // Since we only have td elements in the table, we can simply get the n-th td element
             const cellOffset = (y * 9) + x
             const cellDom = document.getElementsByTagName("td")[cellOffset]
             let cellValue = cellDom.innerText
+            // Parse cell value to int in range 1-9, or 0 if the cell is empty
             cellValue = (cellValue === "" || cellValue === "-" || cellValue == "_")? 0 : parseInt(cellValue)
             row.push(cellValue)
         }
@@ -19,6 +21,7 @@ function getField() {
     }
     return field;
 }
+
 
 /**
  * Writes the 2D array of numbers into the Sudoku field in the HTML table.
@@ -33,6 +36,7 @@ function setField(field) {
         }
     }
 }
+
 
 /**
  * Gets the sudoku field from the HTML DOM, solves it using the WASM module
@@ -65,6 +69,7 @@ function solveSudoku() {
     setField(sudokuResult.field)
 }
 
+
 /**
  * Gets called when the user clicks the "Solve" button
  */
@@ -76,6 +81,10 @@ document.getElementById("solve").addEventListener("click", () => {
     }
 });
 
+
+/**
+ * Clears the sudoku field in the HTML DOM when the user clicks the "Clear" button.
+ */
 document.getElementById("clear").addEventListener("click", () => {
     try {
         setField([

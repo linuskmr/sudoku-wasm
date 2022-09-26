@@ -1,0 +1,58 @@
+:root {
+    /* Support light and dark mode */
+    color-scheme: light dark;
+}
+body {
+    /* Use the system sans-serif font */
+    font-family: sans-serif;
+    /* Center content */
+    text-align: center;
+}
+
+/* Make every third row and column border thick, to create Sudoku boxes */
+td:nth-child(3n) {
+    border-right: solid;
+}
+tr:nth-child(3n) {
+    border-bottom: solid;
+}
+/* Also make the first row and column border thick */
+tr:first-child {
+    border-top: solid;
+}
+td:first-child {
+    border-left: solid;
+}
+
+
+table {
+    /* Center table */
+    margin: 0 auto;
+}
+table, td {
+    /* Add border */
+    border: 1px solid;
+    border-collapse: collapse;
+}
+td {
+    /* Make cells square */
+    width: 30px;
+    height: 30px;
+    font-size: larger;
+    text-align: center;
+}
+button {
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+footer {
+    margin-top: 50px;
+    font-size: small;
+}
+a, a:visited {
+    color: dodgerblue;
+}

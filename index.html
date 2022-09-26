@@ -6,58 +6,20 @@
 	<meta name="keywords" content="sudoku-solver, AssemblyScript, WebAssembly">
 	<meta name="description" content="Sudoku solver written in AssemblyScript">
 	<meta name="author" content="linuskmr">
+	<link rel="stylesheet" href="style.css">
 	<title>Sudoku</title>
-	<script type="module" src="index.js"></script>
-
-	<style>
-		:root {
-			color-scheme: light dark;
-		}
-		body {
-			font-family: sans-serif;
-			text-align: center;
-		}
-		tr:first-child {
-			border-top: solid;
-		}
-		td:first-child {
-			border-left: solid;
-		}
-		td:nth-child(3n) {
-			border-right: solid;
-		}
-		tr:nth-child(3n) {
-			border-bottom: solid;
-		}
-		table {
-			margin: 0 auto;
-		}
-		table, td {
-			border: 1px solid;
-			border-collapse: collapse;
-		}
-		td {
-			width: 30px;
-			height: 30px;
-			font-size: larger;
-			text-align: center;
-		}
-		button {
-			padding: 10px;
-			margin: 10px 0;
-			color: white;
-			border: none;
-			cursor: pointer;
-			border-radius: 5px;
-		}
-	</style>
 </head>
 <body>
 	<h1 style="margin-bottom: 0;">Sudoku Solver</h1>
-	<p style="margin-top: 0;">in <a href="https://www.assemblyscript.org/">AssemblyScript</a>/<a href="https://webassembly.org/">WebAssembly</a></p>
+	<p style="margin-top: 0;">
+		Written in <a href="https://www.assemblyscript.org/">AssemblyScript</a><br>
+		Powered by <a href="https://webassembly.org/">WebAssembly</a>
+	</p>
 
+	<!-- Filled by JavaScript after solving a Sudoku -->
 	<p id="result"></p>
 
+	<!-- Grid input field -->
 	<table>
 		<tr>
 			<td contentEditable="true"></td><td contentEditable="true"></td><td contentEditable="true"></td> <td contentEditable="true"></td><td contentEditable="true"></td><td contentEditable="true">2</td> <td contentEditable="true"></td><td contentEditable="true"></td><td contentEditable="true"></td>
@@ -90,14 +52,16 @@
 		</tr>
 	</table>
 
+	<!-- Event listeners registered in JavaScript -->
 	<button id="solve" style="background-color: dodgerblue;">Solve</button>
 	<button id="clear" style="background-color: red;">Clear</button>
 
-	<br><br>
-
-	<small>
+	<footer>
 		Software licensed under <i>GNU AGPLv3</i>.<br>
 		Source code available at <a href="https://github.com/linuskmr/sudoku-wasm">github.com/linuskmr/sudoku-wasm</a>.
-	</small>
+	</footer>
 </body>
+
+<script type="module" src="index.js"></script>
+
 </html>
