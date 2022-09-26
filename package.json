@@ -1,0 +1,33 @@
+{
+	"name": "sudoku-wasm",
+	"version": "1.0.0",
+	"description": "A sudoku solver written in AssemblyScript",
+	"main": "index.js",
+	"scripts": {
+		"test": "node tests",
+		"asbuild:debug": "asc assembly/index.ts --target debug",
+		"asbuild:release": "asc assembly/index.ts --target release",
+		"asbuild": "npm run asbuild:debug && npm run asbuild:release",
+		"serve": "npx serve ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/linuskmr/sudoku-wasm.git"
+	},
+	"author": "Linus Kämmerer <linuskmr.dev@gmail.com>",
+	"license": "AGPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/linuskmr/sudoku-wasm/issues"
+	},
+	"homepage": "https://github.com/linuskmr/sudoku-wasm#readme",
+	"devDependencies": {
+		"assemblyscript": "^0.21.4"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./build/release.js",
+			"types": "./build/release.d.ts"
+		}
+	}
+}
