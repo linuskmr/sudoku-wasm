@@ -2,8 +2,12 @@
 
 A sudoku solver written in [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) / WebAssembly.
 
+Live demo at [sudoku-wasm.pages.dev](https://sudoku-wasm.pages.dev/).
+
 
 ## Compile & Run
+
+Requires node ≥ 16.0.0 and npm ≥ 7.0.0.
 
 ```bash
 $ npm run asbuild
