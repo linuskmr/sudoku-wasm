@@ -1,6 +1,6 @@
 # sudoku-wasm
 
-A sudoku solver written in [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) / WebAssembly.
+A sudoku solver written in [AssemblyScript](https://www.assemblyscript.org) / [WebAssembly](https://webassembly.org/).
 
 Live demo at [sudoku-wasm.pages.dev](https://sudoku-wasm.pages.dev/).
 
