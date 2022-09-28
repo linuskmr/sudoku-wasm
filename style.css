@@ -11,17 +11,17 @@ body {
 
 /* Make every third row and column border thick, to create Sudoku boxes */
 td:nth-child(3n) {
-    border-right: solid;
+    border-right: 3px solid;
 }
 tr:nth-child(3n) {
-    border-bottom: solid;
+    border-bottom: 3px solid;
 }
 /* Also make the first row and column border thick */
 tr:first-child {
-    border-top: solid;
+    border-top: 3px solid;
 }
 td:first-child {
-    border-left: solid;
+    border-left: 3px solid;
 }
 
 
